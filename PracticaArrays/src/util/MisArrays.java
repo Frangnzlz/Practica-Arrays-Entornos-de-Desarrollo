@@ -58,6 +58,23 @@ public abstract class MisArrays {
 		return medianaNotas;
 	}
 	
+	public static int maximaNota(int [] notas) {
+		
+		int max = notas[0];
+		
+		for(int i = 0; i < notas.length ; i++) {
+			if(notas[i] < 0 || notas[i] > 10) {
+				throw new IllegalArgumentException("Nota fuera del rango permitido");
+			}
+			if(max< notas[i]) {
+				max = notas[i];
+			}
+			
+		}
+		
+		return max;
+	}
+	
 	
 	
 }
