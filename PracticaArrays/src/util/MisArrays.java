@@ -74,6 +74,22 @@ public abstract class MisArrays {
 		
 		return max;
 	}
+	public static int minimaNota(int [] notas) {
+		
+		int min = notas[0];
+		
+		for(int i = 0; i < notas.length ; i++) {
+			if(notas[i] < 0 || notas[i] > 10) {
+				throw new IllegalArgumentException("Nota fuera del rango permitido");
+			}
+			if(min> notas[i]) {
+				min = notas[i];
+			}
+			
+		}
+		
+		return min;
+	}
 	
 	
 	

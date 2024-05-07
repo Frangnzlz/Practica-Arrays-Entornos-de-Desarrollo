@@ -1,14 +1,12 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import util.MisArrays;
 
-class TestMaximaNota {
-
+class TestMediaNotas {
 	static int [] arrayNumeroCorrectos;
 	static int[] arrayNumeroMenores;
 	static int[] arrayNumeroMayores;
@@ -16,22 +14,22 @@ class TestMaximaNota {
 	
 	@BeforeAll
 	static void setup() {
-		arrayNumeroCorrectos = new int []{8,0,1,1,3,10,6,2};
+		arrayNumeroCorrectos = new int []{10,10,1,1};
 		arrayNumeroMenores = new int[] {-5};
 		arrayNumeroMayores = new int[] {15};
 	}
 	
 	@Test
 	void test() {
-		int resultadoEsperado = 10;
-		int resultadoObtenido = MisArrays.maximaNota(arrayNumeroCorrectos);
+		float resultadoEsperado = 5.5f;
+		float resultadoObtenido = MisArrays.mediaNotas(arrayNumeroCorrectos);
 		assertEquals(resultadoEsperado, resultadoObtenido);
 	}
 	
 	@Test
 	void testNumeroMenor(){
 		Exception  excepcion = assertThrows(IllegalArgumentException.class,
-				() -> MisArrays.maximaNota(arrayNumeroMenores));
+				() -> MisArrays.mediaNotas(arrayNumeroMenores));
 		
 		String esperado = "Nota fuera del rango permitido";
 		String obtenido = excepcion.getMessage();
@@ -41,10 +39,11 @@ class TestMaximaNota {
 	@Test
 	void testNumeroMayor(){
 		Exception  excepcion = assertThrows(IllegalArgumentException.class,
-				() -> MisArrays.maximaNota(arrayNumeroMayores));
+				() -> MisArrays.mediaNotas(arrayNumeroMayores));
 		
 		String esperado = "Nota fuera del rango permitido";
 		String obtenido = excepcion.getMessage();
 		assertEquals(esperado,obtenido);
 	}
+
 }
