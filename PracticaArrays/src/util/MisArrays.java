@@ -28,7 +28,13 @@ public abstract class MisArrays {
 		
 		return mediaNotas;
 	}
-	
+	/**
+	 * 
+	 * Metodo para calcular medianas
+	 * 
+	 * @param notas array de notas del que queramos saber la mediana
+	 * @return mediana del array
+	 */
 	public static float medianaNotas(int [] notas) {
 		float medianaNotas = 0;
 		
@@ -57,7 +63,13 @@ public abstract class MisArrays {
 		
 		return medianaNotas;
 	}
-	
+	/**
+	 * 
+	 * Metodo para calcular medias
+	 * 
+	 * @param notas array de notas del que queramos saber la maxima nota
+	 * @return Maxima nota
+	 */
 	public static int maximaNota(int [] notas) {
 		
 		int max = notas[0];
@@ -74,6 +86,14 @@ public abstract class MisArrays {
 		
 		return max;
 	}
+	
+	/**
+	 * 
+	 * Metodo para calcular medias
+	 * 
+	 * @param notas array de notas del que queramos saber la minima nota
+	 * @return Minima nota
+	 */
 	public static int minimaNota(int [] notas) {
 		
 		int min = notas[0];
